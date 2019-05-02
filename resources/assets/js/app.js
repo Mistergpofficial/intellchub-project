@@ -16,11 +16,11 @@ Vue.prototype.$http = axios;
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-// Vue.component('Login', require('./components/Login.vue'));
-//
-// Vue.component('Register', require('./components/Register.vue'));
+import {appDomain} from "./config"
 import {register} from "./config"
+import {adminReg} from "./config"
+import {login} from "./config"
+
 const app = new Vue({
     el: '#app',
     data() {
@@ -51,7 +51,7 @@ const app = new Vue({
     },
     methods: {
         next() {
-            this.$http.post(`${Laravel.appUrl}/register`, this.userData)
+            this.$http.post(register, this.userData)
                 .then(response=>{
                     this.submitted = true;
                     this.userData = "";
@@ -61,7 +61,7 @@ const app = new Vue({
                 })
         },
         register(){
-            this.$http.post(`${Laravel.appUrl}/doctor-register/post-werbrtyrsequew/ntui` , this.admin)
+            this.$http.post(adminReg, this.admin)
                 .then(response=>{
                     this.submitted = true;
                     this.admin = "";
@@ -72,10 +72,11 @@ const app = new Vue({
                 });
         },
         login(){
-            this.$http.post(   `${Laravel.appUrl}/login` , this.loginData)
+            this.$http.post(login, this.loginData)
                 .then(function (response) {
                     console.log(response);
-                    window.location = `${Laravel.appUrl}/user/dashboard`
+                   // window.location = `${Laravel.appUrl}/user/dashboard`
+                    window.location = appDomain + 'user/dashboard'
 
                 })
                 .catch( (error) => {
