@@ -63,10 +63,10 @@ return [
 
         'mysql_heroku_production' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST'),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'host' => 'us-cdbr-iron-east-02.cleardb.net',
+            'database' => 'heroku_875a3db33b912e4',
+            'username' => 'be3257b051bcf4',
+            'password' => 'fce4c09a',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
