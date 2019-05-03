@@ -74,9 +74,9 @@ const app = new Vue({
         login(){
             this.$http.post(login, this.loginData)
                 .then(function (response) {
-                    //console.log(response);
-
-                    window.location = 'https://intell-appointment-scheduler.herokuapp.com/user/dashboard'
+                    console.log(response);
+                    window.location = `${Laravel.appUrl}/user/dashboard`
+                   // window.location = appDomain + 'user/dashboard'
 
                 })
                 .catch( (error) => {
